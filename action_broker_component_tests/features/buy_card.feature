@@ -1,4 +1,4 @@
-Feature: Action Broker
+Feature: Buy Card
 
   Scenario: Player Buys Card
     Given a stocked cardId 11 pile
