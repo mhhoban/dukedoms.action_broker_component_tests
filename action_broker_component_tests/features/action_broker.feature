@@ -1,7 +1,7 @@
 Feature: Action Broker
 
-  @foo
   Scenario: Player Buys Card
+    Given a stocked cardId 11 pile
     When player submits a request to buy a card with values:
       | player id | game id | buys | actions | temp treasure | treasure | cardId | acquire lim | turn phase |
       | 1         | 1337    | 1    | 0       | 0             | 5        | 11      | 0           | buy        |
@@ -9,8 +9,9 @@ Feature: Action Broker
       | buys | actions | temp treasure | treasure | success |
       | 0    | 0       | 0             | 4        | True
 
-
+  @foo
   Scenario: Player Cannot Buy From Empty Card Pile
+    Given an empty cardId 12 pile
     When player submits a request to buy a card with values:
       | player id | game id | buys | actions | temp treasure | treasure | cardId | acquire lim | turn phase |
       | 1         | 1337    | 1    | 0       | 0             | 5        | 12      | 0           | buy        |
