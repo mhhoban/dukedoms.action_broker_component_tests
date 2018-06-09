@@ -22,12 +22,12 @@ def submit_buy_request(context):
     assert_that(result.status_code, equal_to(200))
     context.outcome = outcome
 
-@then('action broker returns acquire result object with values')
-def assert_acquire_results(context):
+@then('action broker successfully returns acquire result object with values')
+def assert_acquire_results_success(context):
     """
     asserts the contents of the acquire results object returned
     """
-
+    assert_that(context.outcome.success, equal_to(True))
     assert_that(context.outcome.playerBuys, equal_to(int(context.table.rows[0]['buys'])))
     assert_that(context.outcome.playerActions, equal_to(int(context.table.rows[0]['actions'])))
     assert_that(context.outcome.playerTempTreasure, equal_to(int(context.table.rows[0]['temp treasure'])))
