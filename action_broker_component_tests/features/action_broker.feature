@@ -1,9 +1,10 @@
 Feature: Action Broker
 
+  @foo
   Scenario: Player Buys Card
     When player submits a request to buy a card with values:
       | player id | game id | buys | actions | temp treasure | treasure | cardId | acquire lim | turn phase |
-      | 1         | 1337    | 1    | 0       | 0             | 5        | 1      | 0           | buy        |
+      | 1         | 1337    | 1    | 0       | 0             | 5        | 11      | 0           | buy        |
     Then action broker returns acquire result object with values:
       | buys | actions | temp treasure | treasure |
       | 0    | 0       | 0             | 4        |

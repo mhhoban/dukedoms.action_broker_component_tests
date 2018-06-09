@@ -1,0 +1,7 @@
+version: '2'
+
+services:
+  card-broker:
+    image: mhhoban/dukedoms-mock-card-broker:latest
+    ports:
+      - 5006:8080
