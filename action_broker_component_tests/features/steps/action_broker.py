@@ -38,10 +38,10 @@ def assert_acquire_results_success(context):
     assert_that(context.outcome.playerTempTreasure, equal_to(int(context.table.rows[0]['temp treasure'])))
     assert_that(context.outcome.playerTreasure, equal_to(int(context.table.rows[0]['treasure'])))
 
-@then('action broker returns pile empty error')
-def assert_empty_pile_error(context):
+@then('action broker returns "{error_message}" error')
+def assert_empty_pile_error(context, error_message):
     """
     asserts that attempt to buy from empty pile throws expected error
     """
     assert_that(context.outcome.success, equal_to(False))
-    assert_that(context.outcome.reason, equal_to("card pile empty"))
+    assert_that(context.outcome.reason, equal_to(error_message))
