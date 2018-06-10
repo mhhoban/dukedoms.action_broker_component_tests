@@ -9,7 +9,7 @@ COPY utility_scripts/wait-for-it.sh /
 COPY setup.py /
 
 ARG service
-COPY $service/ /
+COPY $service/ /$service
 
 RUN pip3 install -e .
 
